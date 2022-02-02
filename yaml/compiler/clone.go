@@ -31,6 +31,10 @@ func cloneImage(src *yaml.Pipeline) string {
 	switch {
 	case src.Platform.OS == "linux" && src.Platform.Arch == "arm":
 		return "drone/git:linux-arm"
+        case src.Platform.OS == "linux" && src.Platform.Arch == "ppc64le":
+		return "cppalliance/git:linux-ppc64le"
+        case src.Platform.OS == "linux" && src.Platform.Arch == "s390x":
+		return "cppalliance/git:linux-s390x"
 	case src.Platform.OS == "linux" && src.Platform.Arch == "arm64":
 		return "drone/git:linux-arm64"
 	case src.Platform.OS == "windows" && src.Platform.Version == "1903":
